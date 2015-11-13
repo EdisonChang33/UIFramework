@@ -1,0 +1,20 @@
+<com.example.custom.RelativeLayoutCustom xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <com.example.custom.ViewPagerCustom
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/message"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textColor="@android:color/black"/>
+
+</com.example.custom.RelativeLayoutCustom>
