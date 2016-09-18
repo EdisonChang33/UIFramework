@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:paddingLeft="11dp"
+    android:paddingRight="8dp"
+    android:paddingTop="13dp">
+
+    <ImageView
+        android:id="@+id/common_list_icon"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="2dp"
+        android:src="#eeeeee" />
+
+    <TextView
+        android:id="@+id/common_list_name"
+        style="@style/style_common_list_title_light"
+        android:layout_width="match_parent"
+        android:layout_height="19dp"
+        android:layout_marginRight="3dip"
+        android:layout_toLeftOf="@+id/common_list_download"
+        android:layout_toRightOf="@id/common_list_icon"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/common_list_download"
+        android:layout_width="70dip"
+        android:layout_height="30dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="7dip"
+        android:background="@drawable/btn_action"
+        android:gravity="center"
+        android:text="@string/btn_download"
+        android:textColor="@android:color/white" />
+
+    <TextView
+        android:id="@+id/common_list_desc"
+        style="@style/style_common_list_desc_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/common_list_name"
+        android:layout_marginTop="10dp"
+        android:layout_toLeftOf="@+id/common_list_download"
+        android:layout_toRightOf="@id/common_list_icon" />
+
+    <View
+        android:id="@+id/common_list_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:paddingLeft="12dp"
+        android:background="#e2e2e2"
+        android:paddingRight="12dp" />
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.focustrouble;
+package com.hobby.uiframework;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.custom;
+package com.hobby.uiframework;
 
 import android.content.Context;
 import android.content.res.Resources;

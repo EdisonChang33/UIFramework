@@ -1,4 +1,4 @@
-package com.example.focustrouble;
+package com.hobby.uiframework;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -23,13 +23,13 @@ public class MultiTabBaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mRoot = inflater.inflate(R.layout.multi_tab_fragment_layout, null);
+        mRoot = inflater.inflate(com.hobby.focustrouble.R.layout.multi_tab_fragment_layout, null);
         init();
         return mRoot;
     }
 
     protected void init() {
-        mViewPager = (ViewPager) mRoot.findViewById(R.id.view_page);
+        mViewPager = (ViewPager) mRoot.findViewById(com.hobby.focustrouble.R.id.view_page);
         loadAdapter();
     }
 

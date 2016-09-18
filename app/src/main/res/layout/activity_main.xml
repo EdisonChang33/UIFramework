@@ -1,10 +1,10 @@
-<com.example.custom.RelativeLayoutCustom xmlns:android="http://schemas.android.com/apk/res/android"
+<com.hobby.uiframework.RelativeLayoutCustom xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical">
 
-    <com.example.custom.ViewPagerCustom
+    <com.hobby.uiframework.ViewPagerCustom
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -17,4 +17,4 @@
         android:textSize="20dp"
         android:textColor="@android:color/black"/>
 
-</com.example.custom.RelativeLayoutCustom>
+</com.hobby.uiframework.RelativeLayoutCustom>

@@ -1,4 +1,4 @@
-package com.example.focustrouble;
+package com.hobby.focustrouble;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

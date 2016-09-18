@@ -1,10 +1,8 @@
-package com.example.focustrouble;
+package com.hobby.uiframework;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
-
-import com.example.custom.ViewPagerCustom;
 
 /**
  * @author EdisonChang
@@ -16,12 +14,12 @@ public class MainActivity extends FragmentActivity implements ViewPagerCustom.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(com.hobby.focustrouble.R.layout.activity_main);
         initViewPager();
     }
 
     private void initViewPager() {
-        mViewPager = (ViewPagerCustom) this.findViewById(R.id.view_pager);
+        mViewPager = (ViewPagerCustom) this.findViewById(com.hobby.focustrouble.R.id.view_pager);
         FragmentPagerAdapter adapter = new HomePageAdapter(MainActivity.this.getSupportFragmentManager());
         mViewPager.addOnPageChangeListener(MainActivity.this);
         mViewPager.setOffscreenPageLimit(5);

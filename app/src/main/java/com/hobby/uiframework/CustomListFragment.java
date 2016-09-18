@@ -1,4 +1,4 @@
-package com.example.focustrouble;
+package com.hobby.uiframework;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.example.custom.NoSaveStateFrameLayout;
+import com.hobby.uiframework.widget.NoSaveStateFrameLayout;
 
 /**
  * @author EdisonChang
@@ -22,7 +22,7 @@ public class CustomListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle bundle) {
         if (mListNormal == null) {
-            mListNormal = (ListView) inflater.inflate(R.layout.common_list_view, null, false);
+            mListNormal = (ListView) inflater.inflate(com.hobby.focustrouble.R.layout.common_list_view, null, false);
         }
         return NoSaveStateFrameLayout.wrap(mListNormal);
     }
