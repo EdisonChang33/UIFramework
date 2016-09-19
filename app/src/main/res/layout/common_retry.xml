@@ -3,21 +3,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-    <ImageView
-        android:id="@+id/icon_loading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:src="@drawable/common_loading" />
-
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="30dp"
-        android:layout_below="@+id/icon_loading"
+        android:layout_height="fill_parent"
         android:gravity="center"
         android:text="@string/retry_messge"
         android:textColor="#cccccc"
-        android:textSize="15dp" />
-
+        android:textSize="20dp" />
 
 </RelativeLayout>

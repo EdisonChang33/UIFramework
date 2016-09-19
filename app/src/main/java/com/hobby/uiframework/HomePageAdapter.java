@@ -4,6 +4,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
+import com.hobby.uiframework.fragment.GridFragment;
+import com.hobby.uiframework.fragment.ListFragment;
+import com.hobby.uiframework.fragment.MultiTabFragment;
+import com.hobby.uiframework.fragment.SimpleFragment;
+
 /**
  * @author EdisonChang
  */
@@ -17,11 +22,10 @@ public class HomePageAdapter extends FragmentPagerAdapter {
     public static final int POSITION_1 = 1;
     public static final int POSITION_2 = 2;
     public static final int POSITION_3 = 3;
-    public static final int POSITION_4 = 4;
 
     public HomePageAdapter(FragmentManager fm) {
         super(fm);
-        mTags = new String[]{"TAB1", "TAB2", "TAB3", "TAB4", "TAB5"};
+        mTags = new String[]{"TAB1", "TAB2", "TAB3", "TAB4"};
         defaultIds = new long[mTags.length];
         initIds();
     }
@@ -38,19 +42,16 @@ public class HomePageAdapter extends FragmentPagerAdapter {
         Fragment fragment;
         switch (index) {
             case POSITION_0:
-                fragment = new MultiTabBaseFragment();
+                fragment = new MultiTabFragment();
                 break;
             case POSITION_1:
-                fragment = new MultiTabBaseFragment();
+                fragment = new ListFragment();
                 break;
             case POSITION_2:
-                fragment = new MultiTabBaseFragment();
+                fragment = new GridFragment();
                 break;
             case POSITION_3:
-                fragment = new MultiTabBaseFragment();
-                break;
-            case POSITION_4:
-                fragment = new MultiTabBaseFragment();
+                fragment = new SimpleFragment();
                 break;
             default:
                 fragment = new Fragment();

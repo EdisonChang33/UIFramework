@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.hobby.uiframework.widget.GridViewWithHeader xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fastScrollEnabled="false"
+    android:horizontalSpacing="10dp"
+    android:listSelector="@android:color/transparent"
+    android:numColumns="2"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:scrollbars="none"
+    android:verticalSpacing="10dp" />

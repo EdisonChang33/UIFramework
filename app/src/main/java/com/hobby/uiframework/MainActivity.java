@@ -3,26 +3,32 @@ package com.hobby.uiframework;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+
+import com.hobby.uiframework.widget.gradualradiobar.GradualRadioGroup;
 
 /**
  * @author EdisonChang
  */
-public class MainActivity extends FragmentActivity implements ViewPagerCustom.OnPageChangeListener {
+public class MainActivity extends FragmentActivity implements ViewPager.OnPageChangeListener {
 
-    private ViewPagerCustom mViewPager;
+    private ViewPager mViewPager;
+    private GradualRadioGroup gradualRadioGroup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.hobby.focustrouble.R.layout.activity_main);
+        setContentView(R.layout.activity_main);
+        gradualRadioGroup = (GradualRadioGroup) findViewById(R.id.radiobar);
         initViewPager();
+        gradualRadioGroup.setViewPager(mViewPager);
     }
 
     private void initViewPager() {
-        mViewPager = (ViewPagerCustom) this.findViewById(com.hobby.focustrouble.R.id.view_pager);
+        mViewPager = (ViewPager) this.findViewById(R.id.viewpager);
         FragmentPagerAdapter adapter = new HomePageAdapter(MainActivity.this.getSupportFragmentManager());
         mViewPager.addOnPageChangeListener(MainActivity.this);
-        mViewPager.setOffscreenPageLimit(5);
+        mViewPager.setOffscreenPageLimit(4);
         mViewPager.setAdapter(adapter);
     }
 

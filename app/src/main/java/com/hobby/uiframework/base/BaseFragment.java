@@ -14,9 +14,11 @@ public abstract class BaseFragment extends Fragment {
     protected boolean isVisible = false;
     protected boolean isEnter = false;
 
-    protected abstract String getPageId();
+    protected String getPageId() {
+        return this.getClass().getSimpleName();
+    }
 
-    protected abstract boolean innerViewPager();
+    protected abstract boolean isViewPagerChild();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,13 +28,13 @@ public abstract class BaseFragment extends Fragment {
 
     public void onResume() {
         super.onResume();
-        if (innerViewPager() && isVisible || !innerViewPager())
+        if (isViewPagerChild() && isVisible || !isViewPagerChild())
             onEnter();
     }
 
     public void onPause() {
 
-        if (innerViewPager() && isVisible || !innerViewPager())
+        if (isViewPagerChild() && isVisible || !isViewPagerChild())
             onLeave();
 
         super.onPause();
@@ -58,7 +60,7 @@ public abstract class BaseFragment extends Fragment {
     protected void onEnter() {
         if (!isEnter) {
 
-            MobclickAgent.onPageStart(getPageId());
+            //MobclickAgent.onPageStart(getPageId());
             isEnter = true;
         }
     }
@@ -68,7 +70,7 @@ public abstract class BaseFragment extends Fragment {
      */
     protected void onLeave() {
         if (isEnter) {
-            MobclickAgent.onPageEnd(getPageId());
+            //MobclickAgent.onPageEnd(getPageId());
             isEnter = false;
         }
     }

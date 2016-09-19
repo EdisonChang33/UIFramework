@@ -13,7 +13,7 @@
         android:layout_marginLeft="2dp"
         android:layout_marginRight="10dip"
         android:layout_marginTop="2dp"
-        android:src="#eeeeee" />
+        android:src="@drawable/ic_launcher" />
 
     <TextView
         android:id="@+id/common_list_name"
@@ -21,20 +21,8 @@
         android:layout_width="match_parent"
         android:layout_height="19dp"
         android:layout_marginRight="3dip"
-        android:layout_toLeftOf="@+id/common_list_download"
         android:layout_toRightOf="@id/common_list_icon"
         android:singleLine="true" />
-
-    <Button
-        android:id="@+id/common_list_download"
-        android:layout_width="70dip"
-        android:layout_height="30dip"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="7dip"
-        android:background="@drawable/btn_action"
-        android:gravity="center"
-        android:text="@string/btn_download"
-        android:textColor="@android:color/white" />
 
     <TextView
         android:id="@+id/common_list_desc"
@@ -43,7 +31,6 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/common_list_name"
         android:layout_marginTop="10dp"
-        android:layout_toLeftOf="@+id/common_list_download"
         android:layout_toRightOf="@id/common_list_icon" />
 
     <View
@@ -51,8 +38,8 @@
         android:layout_width="match_parent"
         android:layout_height="1px"
         android:layout_alignParentBottom="true"
-        android:paddingLeft="12dp"
         android:background="#e2e2e2"
+        android:paddingLeft="12dp"
         android:paddingRight="12dp" />
 
 </RelativeLayout>

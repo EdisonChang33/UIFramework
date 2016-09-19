@@ -1,20 +1,88 @@
 <com.hobby.uiframework.RelativeLayoutCustom xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical">
 
-    <com.hobby.uiframework.ViewPagerCustom
-        android:id="@+id/view_pager"
+    <com.hobby.uiframework.widget.gradualradiobar.GradualRadioGroup
+        android:id="@+id/radiobar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
 
-    <TextView
+        <com.hobby.uiframework.widget.gradualradiobar.GradualRadioButton
+            android:id="@+id/TAB1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:checked="true"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/home"
+            android:gravity="center_horizontal"
+            android:paddingBottom="5dp"
+            android:paddingTop="3dp"
+            android:text="TAB1"
+            android:textColor="#555"
+            app:gradual_color="#f75151" />
+
+        <com.hobby.uiframework.widget.gradualradiobar.GradualRadioButton
+            android:id="@+id/TAB2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/game"
+            android:gravity="center_horizontal"
+            android:paddingBottom="5dp"
+            android:paddingTop="3dp"
+            android:text="TAB2"
+            android:textColor="#555"
+            app:gradual_color="#f75151" />
+
+        <com.hobby.uiframework.widget.gradualradiobar.GradualRadioButton
+            android:id="@+id/TAB3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/setting"
+            android:gravity="center_horizontal"
+            android:paddingBottom="5dp"
+            android:paddingTop="3dp"
+            android:text="TAB3"
+            android:textColor="#555"
+            app:gradual_color="#f75151" />
+
+        <com.hobby.uiframework.widget.gradualradiobar.GradualRadioButton
+            android:id="@+id/TAB4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="3dp"
+            android:drawableTop="@drawable/rec"
+            android:gravity="center_horizontal"
+            android:paddingBottom="5dp"
+            android:paddingTop="3dp"
+            android:text="TAB4"
+            android:textColor="#555"
+            app:gradual_color="#f75151" />
+
+    </com.hobby.uiframework.widget.gradualradiobar.GradualRadioGroup>
+
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_above="@id/radiobar"
+        android:layout_marginBottom="2dp"
+        android:background="#666" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/message"
-        android:gravity="center"
-        android:textSize="20dp"
-        android:textColor="@android:color/black"/>
+        android:layout_above="@id/line" />
 
 </com.hobby.uiframework.RelativeLayoutCustom>

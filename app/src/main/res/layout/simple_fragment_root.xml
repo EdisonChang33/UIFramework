@@ -9,8 +9,8 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:gravity="center"
-        android:text="@string/downloading"
-        android:textColor="#cccccc"
+        android:text="i am a simple fragment"
+        android:textColor="@android:color/black"
         android:textSize="20dp" />
 
 </LinearLayout>

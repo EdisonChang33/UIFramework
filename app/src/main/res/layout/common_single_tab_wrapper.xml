@@ -8,13 +8,7 @@
     <FrameLayout
         android:id="@+id/common_content_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="52dp" />
+        android:layout_height="match_parent" />
 
-    <include
-        android:id="@+id/common_toolbar"
-        layout="@layout/common_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="58dp" />
 
 </RelativeLayout>

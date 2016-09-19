@@ -5,4 +5,19 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="style_common_list_title_light">
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:lineSpacingExtra">3dip</item>
+        <item name="android:textColor">#333333</item>
+    </style>
+
+    <style name="style_common_list_desc_light">
+        <item name="android:singleLine">true</item>
+        <item name="android:textSize">12dip</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textColor">#8d8d8d</item>
+    </style>
+
 </resources>

@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">UIFramework</string>
-    <string name="message">demo is just for test, read the fucking code!</string>
+
+    <!---->
+    <string name="downloading">loading&#8230;</string>
+    <string name="retry_messge">click to retry</string>
+    <string name="no_messge">no content~</string>
+
 </resources>

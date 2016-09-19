@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import android.widget.ListView;
 
 import com.hobby.uiframework.R;
 import com.hobby.uiframework.support.DataLoader;
@@ -18,7 +17,7 @@ import com.hobby.uiframework.widget.NoSaveStateFrameLayout;
  */
 public abstract class BaseListFragment extends BaseFragment implements View.OnClickListener, AbsListView.OnScrollListener {
 
-    abstract protected ListView onCreateList();
+    abstract protected AbsListView onCreateList();
 
     abstract protected void onListViewCreated(AbsListView list);
 
@@ -48,7 +47,7 @@ public abstract class BaseListFragment extends BaseFragment implements View.OnCl
             absListView = onCreateList();
             absListView.setOnScrollListener(this);
             scrollState = SCROLL_STATE_IDLE;
-            mRefreshFoot = inflater.inflate(R.layout.common_list_foot_refresh, null);
+            mRefreshFoot = inflater.inflate(R.layout.common_list_foot, null);
             addFooterView(absListView, mRefreshFoot);
             mRefreshFoot.findViewById(R.id.footer_refresh_retry).setOnClickListener(this);
             mRefreshFoot.setVisibility(View.GONE);
@@ -68,9 +67,9 @@ public abstract class BaseListFragment extends BaseFragment implements View.OnCl
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         if (mRefreshRoot == null) {
-            mRefreshRoot = LayoutInflater.from(getActivity()).inflate(R.layout.common_listview_refreshroot, null);
+            mRefreshRoot = LayoutInflater.from(getActivity()).inflate(R.layout.common_refresh_root, null);
             mRefreshView = mRefreshRoot.findViewById(R.id.refresh_layout);
-            mRefreshRoot.findViewById(R.id.common_retry_layout).setOnClickListener(this);
+            mRefreshRoot.findViewById(R.id.common_retry).setOnClickListener(this);
         }
 
         if (!addCommonRrefresh()) {
@@ -98,7 +97,7 @@ public abstract class BaseListFragment extends BaseFragment implements View.OnCl
         if (loader != null && loader.isEmpty() && loader.getLoadState() != DataLoader.LOAD_STATE_LOADING) {
             loader.setLoadState(DataLoader.LOAD_STATE_NORMAL);
             loadData();
-        } else if (loader == null) {
+        } else if (loader == null || !loader.isEmpty()) {
             refresh(true);
         }
     }
@@ -109,7 +108,7 @@ public abstract class BaseListFragment extends BaseFragment implements View.OnCl
         if (listState != null) {
             absListView.onRestoreInstanceState(listState);
         }
-        if ((isVisible || !innerViewPager()) && resumeLoad) {
+        if ((isVisible || !isViewPagerChild()) && resumeLoad) {
             loadDataIfEmpty();
         }
     }
@@ -159,9 +158,9 @@ public abstract class BaseListFragment extends BaseFragment implements View.OnCl
 
         if (mRefreshView != null && mRefreshFoot != null) {
             if (isEmpty) {
-                showView(mRefreshView.findViewById(R.id.RefreshLinear), isLoading);
-                showView(mRefreshView.findViewById(R.id.common_retry_layout), isFailed);
-                showView(mRefreshView.findViewById(R.id.common_not_content), !isLoading && !isFailed);
+                showView(mRefreshView.findViewById(R.id.common_loading), isLoading);
+                showView(mRefreshView.findViewById(R.id.common_retry), isFailed);
+                showView(mRefreshView.findViewById(R.id.common_no_content), !isLoading && !isFailed);
             } else {
                 showView(mRefreshFoot.findViewById(R.id.RefreshProgress), !isEnd && !isFailed);
                 showView(mRefreshFoot.findViewById(R.id.footer_refresh_retry), isFailed);
@@ -177,10 +176,6 @@ public abstract class BaseListFragment extends BaseFragment implements View.OnCl
         return loader.isEmpty();
     }
 
-    protected View getRefreshView() {
-        return mRefreshRoot;
-    }
-
     protected void showView(View v, boolean bShow) {
         if (v != null) {
             v.setVisibility(bShow ? View.VISIBLE : View.GONE);
@@ -191,7 +186,7 @@ public abstract class BaseListFragment extends BaseFragment implements View.OnCl
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.footer_refresh_retry:
-            case R.id.common_retry_layout:
+            case R.id.common_retry:
                 loadData();
                 break;
             default:
